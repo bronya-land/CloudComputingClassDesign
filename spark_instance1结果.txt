@@ -1,0 +1,243 @@
+user@cyvhlqiyvh8qaq9-machine:~$ kubectl logs douban-analysis-driver
+26/05/30 09:13:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/05/30 09:13:50 INFO SparkContext: Running Spark version 3.4.3
+26/05/30 09:13:50 INFO ResourceUtils: ==============================================================
+26/05/30 09:13:50 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/05/30 09:13:50 INFO ResourceUtils: ==============================================================
+26/05/30 09:13:50 INFO SparkContext: Submitted application: DoubanAnalysis
+26/05/30 09:13:50 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memoryOverhead -> name: memoryOverhead, amount: 128, script: , vendor: , cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/05/30 09:13:50 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/05/30 09:13:50 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/05/30 09:13:50 INFO SecurityManager: Changing view acls to: spark
+26/05/30 09:13:50 INFO SecurityManager: Changing modify acls to: spark
+26/05/30 09:13:50 INFO SecurityManager: Changing view acls groups to: 
+26/05/30 09:13:50 INFO SecurityManager: Changing modify acls groups to: 
+26/05/30 09:13:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+26/05/30 09:13:50 INFO Utils: Successfully started service 'sparkDriver' on port 7078.
+26/05/30 09:13:50 INFO SparkEnv: Registering MapOutputTracker
+26/05/30 09:13:50 INFO SparkEnv: Registering BlockManagerMaster
+26/05/30 09:13:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/05/30 09:13:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/05/30 09:13:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/05/30 09:13:50 INFO DiskBlockManager: Created local directory at /var/data/spark-844e47b5-5000-4ce9-bb1f-6f8200053404/blockmgr-f451c3d4-dc23-479d-9e8d-7625d0656dc3
+26/05/30 09:13:50 INFO MemoryStore: MemoryStore started with capacity 117.0 MiB
+26/05/30 09:13:50 INFO SparkEnv: Registering OutputCommitCoordinator
+26/05/30 09:13:50 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/05/30 09:13:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/05/30 09:13:50 INFO SparkKubernetesClientFactory: Auto-configuring K8S client using current context from users K8S config file
+26/05/30 09:13:51 INFO ExecutorPodsAllocator: Going to request 1 executors from Kubernetes for ResourceProfile Id: 0, target: 1, known: 0, sharedSlotFromPendingPods: 2147483647.
+26/05/30 09:13:51 INFO ExecutorPodsAllocator: Found 0 reusable PVCs from 0 PVCs
+26/05/30 09:13:52 INFO BasicExecutorFeatureStep: Decommissioning not enabled, skipping shutdown script
+26/05/30 09:13:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 7079.
+26/05/30 09:13:52 INFO NettyBlockTransferService: Server created on douban-analysis-f73b129e78292dcd-driver-svc.default.svc 10.0.1.29:7079
+26/05/30 09:13:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/05/30 09:13:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, douban-analysis-f73b129e78292dcd-driver-svc.default.svc, 7079, None)
+26/05/30 09:13:52 INFO BlockManagerMasterEndpoint: Registering block manager douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 with 117.0 MiB RAM, BlockManagerId(driver, douban-analysis-f73b129e78292dcd-driver-svc.default.svc, 7079, None)
+26/05/30 09:13:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, douban-analysis-f73b129e78292dcd-driver-svc.default.svc, 7079, None)
+26/05/30 09:13:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, douban-analysis-f73b129e78292dcd-driver-svc.default.svc, 7079, None)
+26/05/30 09:13:54 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: No executor found for 10.0.1.30:39852
+26/05/30 09:13:55 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.0.1.30:39858) with ID 1,  ResourceProfileId 0
+26/05/30 09:13:55 INFO KubernetesClusterSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/05/30 09:13:55 INFO BlockManagerMasterEndpoint: Registering block manager 10.0.1.30:38663 with 117.0 MiB RAM, BlockManagerId(1, 10.0.1.30, 38663, None)
+26/05/30 09:13:55 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/05/30 09:13:55 INFO SharedState: Warehouse path is 'file:/opt/spark/work-dir/spark-warehouse'.
+26/05/30 09:13:56 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+26/05/30 09:13:56 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/05/30 09:13:56 INFO MetricsSystemImpl: s3a-file-system metrics system started
+26/05/30 09:13:57 INFO InMemoryFileIndex: It took 76 ms to list leaf files for 1 paths.
+26/05/30 09:13:57 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 208.3 KiB, free 116.8 MiB)
+26/05/30 09:13:58 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 36.5 KiB, free 116.7 MiB)
+26/05/30 09:13:58 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 36.5 KiB, free: 116.9 MiB)
+26/05/30 09:13:58 INFO SparkContext: Created broadcast 0 from csv at <unknown>:0
+26/05/30 09:13:58 INFO FileInputFormat: Total input files to process : 1
+26/05/30 09:13:58 INFO FileInputFormat: Total input files to process : 1
+26/05/30 09:13:58 INFO SparkContext: Starting job: csv at <unknown>:0
+26/05/30 09:13:58 INFO DAGScheduler: Got job 0 (csv at <unknown>:0) with 1 output partitions
+26/05/30 09:13:58 INFO DAGScheduler: Final stage: ResultStage 0 (csv at <unknown>:0)
+26/05/30 09:13:58 INFO DAGScheduler: Parents of final stage: List()
+26/05/30 09:13:58 INFO DAGScheduler: Missing parents: List()
+26/05/30 09:13:58 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at csv at <unknown>:0), which has no missing parents
+26/05/30 09:13:58 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 7.6 KiB, free 116.7 MiB)
+26/05/30 09:13:58 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.4 KiB, free 116.7 MiB)
+26/05/30 09:13:58 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 4.4 KiB, free: 116.9 MiB)
+26/05/30 09:13:58 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1540
+26/05/30 09:13:58 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at csv at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+26/05/30 09:13:58 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+26/05/30 09:13:58 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (10.0.1.30, executor 1, partition 0, PROCESS_LOCAL, 7517 bytes) 
+26/05/30 09:13:58 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.0.1.30:38663 (size: 4.4 KiB, free: 117.0 MiB)
+26/05/30 09:13:58 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.0.1.30:38663 (size: 36.5 KiB, free: 116.9 MiB)
+26/05/30 09:14:00 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2192 ms on 10.0.1.30 (executor 1) (1/1)
+26/05/30 09:14:00 INFO DAGScheduler: ResultStage 0 (csv at <unknown>:0) finished in 2.279 s
+26/05/30 09:14:00 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/05/30 09:14:00 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+26/05/30 09:14:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+26/05/30 09:14:00 INFO DAGScheduler: Job 0 finished: csv at <unknown>:0, took 2.356377 s
+26/05/30 09:14:00 INFO SparkContext: Starting job: csv at <unknown>:0
+26/05/30 09:14:00 INFO DAGScheduler: Got job 1 (csv at <unknown>:0) with 1 output partitions
+26/05/30 09:14:00 INFO DAGScheduler: Final stage: ResultStage 1 (csv at <unknown>:0)
+26/05/30 09:14:00 INFO DAGScheduler: Parents of final stage: List()
+26/05/30 09:14:00 INFO DAGScheduler: Missing parents: List()
+26/05/30 09:14:00 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[3] at csv at <unknown>:0), which has no missing parents
+26/05/30 09:14:00 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 10.1 KiB, free 116.7 MiB)
+26/05/30 09:14:00 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 5.3 KiB, free 116.7 MiB)
+26/05/30 09:14:00 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 5.3 KiB, free: 116.9 MiB)
+26/05/30 09:14:00 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1540
+26/05/30 09:14:00 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[3] at csv at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+26/05/30 09:14:00 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+26/05/30 09:14:00 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (10.0.1.30, executor 1, partition 0, PROCESS_LOCAL, 7517 bytes) 
+26/05/30 09:14:00 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.0.1.30:38663 (size: 5.3 KiB, free: 116.9 MiB)
+26/05/30 09:14:02 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 1512 ms on 10.0.1.30 (executor 1) (1/1)
+26/05/30 09:14:02 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+26/05/30 09:14:02 INFO DAGScheduler: ResultStage 1 (csv at <unknown>:0) finished in 1.523 s
+26/05/30 09:14:02 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+26/05/30 09:14:02 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+26/05/30 09:14:02 INFO DAGScheduler: Job 1 finished: csv at <unknown>:0, took 1.539182 s
+26/05/30 09:14:02 INFO BlockManagerInfo: Removed broadcast_0_piece0 on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 in memory (size: 36.5 KiB, free: 117.0 MiB)
+26/05/30 09:14:02 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 10.0.1.30:38663 in memory (size: 36.5 KiB, free: 117.0 MiB)
+26/05/30 09:14:02 INFO BlockManagerInfo: Removed broadcast_1_piece0 on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 in memory (size: 4.4 KiB, free: 117.0 MiB)
+26/05/30 09:14:02 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 10.0.1.30:38663 in memory (size: 4.4 KiB, free: 117.0 MiB)
+26/05/30 09:14:02 INFO BlockManagerInfo: Removed broadcast_2_piece0 on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 in memory (size: 5.3 KiB, free: 117.0 MiB)
+26/05/30 09:14:02 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 10.0.1.30:38663 in memory (size: 5.3 KiB, free: 117.0 MiB)
+================================================================================
+豆瓣电影数据分析报告
+================================================================================
+26/05/30 09:14:03 INFO FileSourceStrategy: Pushed Filters: 
+26/05/30 09:14:03 INFO FileSourceStrategy: Post-Scan Filters: 
+26/05/30 09:14:04 INFO CodeGenerator: Code generated in 227.793432 ms
+26/05/30 09:14:04 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 207.5 KiB, free 116.8 MiB)
+26/05/30 09:14:04 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 36.6 KiB, free 116.7 MiB)
+26/05/30 09:14:04 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 36.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:04 INFO SparkContext: Created broadcast 3 from count at <unknown>:0
+26/05/30 09:14:04 INFO FileSourceScanExec: Planning scan with bin packing, max size: 20086426 bytes, open cost is considered as scanning 4194304 bytes.
+26/05/30 09:14:04 INFO DAGScheduler: Registering RDD 7 (count at <unknown>:0) as input to shuffle 0
+26/05/30 09:14:04 INFO DAGScheduler: Got map stage job 2 (count at <unknown>:0) with 1 output partitions
+26/05/30 09:14:04 INFO DAGScheduler: Final stage: ShuffleMapStage 2 (count at <unknown>:0)
+26/05/30 09:14:04 INFO DAGScheduler: Parents of final stage: List()
+26/05/30 09:14:04 INFO DAGScheduler: Missing parents: List()
+26/05/30 09:14:04 INFO DAGScheduler: Submitting ShuffleMapStage 2 (MapPartitionsRDD[7] at count at <unknown>:0), which has no missing parents
+26/05/30 09:14:04 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 16.8 KiB, free 116.7 MiB)
+26/05/30 09:14:04 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 8.6 KiB, free 116.7 MiB)
+26/05/30 09:14:04 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 8.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:04 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1540
+26/05/30 09:14:04 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 2 (MapPartitionsRDD[7] at count at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+26/05/30 09:14:04 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+26/05/30 09:14:04 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (10.0.1.30, executor 1, partition 0, PROCESS_LOCAL, 7931 bytes) 
+26/05/30 09:14:04 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.0.1.30:38663 (size: 8.6 KiB, free: 117.0 MiB)
+26/05/30 09:14:05 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.0.1.30:38663 (size: 36.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 1715 ms on 10.0.1.30 (executor 1) (1/1)
+26/05/30 09:14:06 INFO DAGScheduler: ShuffleMapStage 2 (count at <unknown>:0) finished in 1.774 s
+26/05/30 09:14:06 INFO DAGScheduler: looking for newly runnable stages
+26/05/30 09:14:06 INFO DAGScheduler: running: Set()
+26/05/30 09:14:06 INFO DAGScheduler: waiting: Set()
+26/05/30 09:14:06 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+26/05/30 09:14:06 INFO DAGScheduler: failed: Set()
+26/05/30 09:14:06 INFO CodeGenerator: Code generated in 17.597216 ms
+26/05/30 09:14:06 INFO SparkContext: Starting job: count at <unknown>:0
+26/05/30 09:14:06 INFO DAGScheduler: Got job 3 (count at <unknown>:0) with 1 output partitions
+26/05/30 09:14:06 INFO DAGScheduler: Final stage: ResultStage 4 (count at <unknown>:0)
+26/05/30 09:14:06 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+26/05/30 09:14:06 INFO DAGScheduler: Missing parents: List()
+26/05/30 09:14:06 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[10] at count at <unknown>:0), which has no missing parents
+26/05/30 09:14:06 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 12.1 KiB, free 116.7 MiB)
+26/05/30 09:14:06 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.8 KiB, free 116.7 MiB)
+26/05/30 09:14:06 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 5.8 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1540
+26/05/30 09:14:06 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[10] at count at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+26/05/30 09:14:06 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks resource profile 0
+26/05/30 09:14:06 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 3) (10.0.1.30, executor 1, partition 0, NODE_LOCAL, 7382 bytes) 
+26/05/30 09:14:06 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.0.1.30:38663 (size: 5.8 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.0.1.30:39858
+26/05/30 09:14:06 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 3) in 218 ms on 10.0.1.30 (executor 1) (1/1)
+26/05/30 09:14:06 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+26/05/30 09:14:06 INFO DAGScheduler: ResultStage 4 (count at <unknown>:0) finished in 0.238 s
+26/05/30 09:14:06 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+26/05/30 09:14:06 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+26/05/30 09:14:06 INFO DAGScheduler: Job 3 finished: count at <unknown>:0, took 0.251063 s
+数据加载成功！共 62188 行
+
+============================================================
+查询2：评分最高的15部电影（ORDER BY Top-N）
+============================================================
+26/05/30 09:14:06 INFO FileSourceStrategy: Pushed Filters: IsNotNull(rating_score)
+26/05/30 09:14:06 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(rating_score#4),(cast(rating_score#4 as int) > 0)
+26/05/30 09:14:06 INFO CodeGenerator: Code generated in 16.951202 ms
+26/05/30 09:14:06 INFO BlockManagerInfo: Removed broadcast_4_piece0 on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 in memory (size: 8.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 10.0.1.30:38663 in memory (size: 8.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO CodeGenerator: Code generated in 21.592147 ms
+26/05/30 09:14:06 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 207.5 KiB, free 116.5 MiB)
+26/05/30 09:14:06 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 36.6 KiB, free 116.5 MiB)
+26/05/30 09:14:06 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 36.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO SparkContext: Created broadcast 6 from showString at <unknown>:0
+26/05/30 09:14:06 INFO FileSourceScanExec: Planning scan with bin packing, max size: 20086426 bytes, open cost is considered as scanning 4194304 bytes.
+26/05/30 09:14:06 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 10.0.1.30:38663 in memory (size: 5.8 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO BlockManagerInfo: Removed broadcast_5_piece0 on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 in memory (size: 5.8 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO SparkContext: Starting job: showString at <unknown>:0
+26/05/30 09:14:06 INFO DAGScheduler: Got job 4 (showString at <unknown>:0) with 1 output partitions
+26/05/30 09:14:06 INFO DAGScheduler: Final stage: ResultStage 5 (showString at <unknown>:0)
+26/05/30 09:14:06 INFO DAGScheduler: Parents of final stage: List()
+26/05/30 09:14:06 INFO DAGScheduler: Missing parents: List()
+26/05/30 09:14:06 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[15] at showString at <unknown>:0), which has no missing parents
+26/05/30 09:14:06 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 18.5 KiB, free 116.5 MiB)
+26/05/30 09:14:06 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 8.8 KiB, free 116.5 MiB)
+26/05/30 09:14:06 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on douban-analysis-f73b129e78292dcd-driver-svc.default.svc:7079 (size: 8.8 KiB, free: 116.9 MiB)
+26/05/30 09:14:06 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1540
+26/05/30 09:14:06 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[15] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+26/05/30 09:14:06 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks resource profile 0
+26/05/30 09:14:06 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 4) (10.0.1.30, executor 1, partition 0, PROCESS_LOCAL, 7942 bytes) 
+26/05/30 09:14:07 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.0.1.30:38663 (size: 8.8 KiB, free: 116.9 MiB)
+26/05/30 09:14:07 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.0.1.30:38663 (size: 36.6 KiB, free: 116.9 MiB)
+26/05/30 09:14:07 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 4) in 835 ms on 10.0.1.30 (executor 1) (1/1)
+26/05/30 09:14:07 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+26/05/30 09:14:07 INFO DAGScheduler: ResultStage 5 (showString at <unknown>:0) finished in 0.844 s
+26/05/30 09:14:07 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+26/05/30 09:14:07 INFO TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+26/05/30 09:14:07 INFO DAGScheduler: Job 4 finished: showString at <unknown>:0, took 0.852923 s
+26/05/30 09:14:07 INFO CodeGenerator: Code generated in 46.15681 ms
+26/05/30 09:14:07 INFO CodeGenerator: Code generated in 17.786676 ms
++----------------------------------+------------+------------+------+----------------+
+|                             title|rating_score|rating_count|  year|          genres|
++----------------------------------+------------+------------+------+----------------+
+|             是，大臣 1984圣诞特辑|         9.8|        5328|1984.0|            喜剧|
+|     唱游大世界王菲香港演唱会98-99|         9.8|         370|1999.0|     纪录片/音乐|
+|                 张国荣热·情演唱会|         9.8|        1833|2000.0|纪录片/音乐/歌舞|
+|                      肖申克的救赎|         9.7|     1992071|1994.0|       犯罪/剧情|
+|              周杰伦无与伦比演唱会|         9.7|        1122|2004.0|            音乐|
+|                  张国荣告别演唱会|         9.7|        1099|1989.0|纪录片/音乐/歌舞|
+|神秘博士：DT的视频日志：最后的日子|         9.6|         986|2010.0|          纪录片|
+|        悲惨世界：25周年纪念演唱会|         9.6|        8806|2010.0|            音乐|
+|                北国之恋：1989归乡|         9.6|         717|1989.0|            剧情|
+|                  张国荣拉阔音乐会|         9.6|         666|2000.0|纪录片/音乐/歌舞|
+|                          天下一家|         9.6|         592|1985.0|            音乐|
+|                          控方证人|         9.6|      275167|1957.0|  剧情/犯罪/悬疑|
+|                            棱角杯|         9.6|         156|1993.0|       剧情/喜剧|
+|                          霸王别姬|         9.6|     1486938|1993.0|  剧情/爱情/同性|
+|                          美丽人生|         9.5|      951526|1997.0|  剧情/喜剧/爱情|
++----------------------------------+------------+------------+------+----------------+
+
+
+【分析说明】本查询按评分降序排列，筛选出评分最高的15部电影。
+当评分相同时，按评分人数排序，确保人气更高的电影排在前面。
+26/05/30 09:14:07 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/05/30 09:14:07 INFO SparkUI: Stopped Spark web UI at http://douban-analysis-f73b129e78292dcd-driver-svc.default.svc:4040
+26/05/30 09:14:07 INFO KubernetesClusterSchedulerBackend: Shutting down all executors
+26/05/30 09:14:07 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Asking each executor to shut down
+26/05/30 09:14:07 WARN ExecutorPodsWatchSnapshotSource: Kubernetes client has been closed.
+26/05/30 09:14:08 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/05/30 09:14:08 INFO MemoryStore: MemoryStore cleared
+26/05/30 09:14:08 INFO BlockManager: BlockManager stopped
+26/05/30 09:14:08 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/05/30 09:14:08 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/05/30 09:14:08 INFO SparkContext: Successfully stopped SparkContext
+
+================================================================================
+数据分析完成！
+================================================================================
+26/05/30 09:14:08 INFO ShutdownHookManager: Shutdown hook called
+26/05/30 09:14:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-7e747275-9ed7-4e4f-9109-2fce60626a7b
+26/05/30 09:14:08 INFO ShutdownHookManager: Deleting directory /var/data/spark-844e47b5-5000-4ce9-bb1f-6f8200053404/spark-7eb9a6e8-ee39-4000-8b90-a12fa8722e35
+26/05/30 09:14:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-17b98a55-88b5-4a90-b380-8f076ff7cf6c
+26/05/30 09:14:08 INFO ShutdownHookManager: Deleting directory /var/data/spark-844e47b5-5000-4ce9-bb1f-6f8200053404/spark-7eb9a6e8-ee39-4000-8b90-a12fa8722e35/pyspark-4a8c570f-1e19-470c-ba99-dd32bf8bdbca
+26/05/30 09:14:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-aec271e2-798e-4635-abcb-1dc2eec90fd4
+26/05/30 09:14:08 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+26/05/30 09:14:08 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+26/05/30 09:14:08 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.

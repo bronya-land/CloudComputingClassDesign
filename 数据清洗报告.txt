@@ -1,0 +1,94 @@
+PS D:\CloudComputing> & D:\CloudComputing\.venv\Scripts\python.exe d:/CloudComputing/data_clean.py
+============================================================
+数据清洗报告
+============================================================
+
+【1. 数据基本信息】
+数据形状: (67132, 11)
+
+字段数据类型:
+movie_id            int64
+title              object
+original_title     object
+year              float64
+rating_score      float64
+rating_count        int64
+genres             object
+countries          object
+directors          object
+collect_count       int64
+summary            object
+dtype: object
+
+前5行数据:
+   movie_id    title            original_title    year  ...  countries  directors collect_count                                            summary
+0   1292052   肖申克的救赎  The Shawshank Redemption  1994.0  ...         美国   弗兰克·德拉邦特       2866850  20世纪40年代末，小有成就的青年银行家安迪（蒂姆·罗宾斯 Tim Robbins 饰）因涉...
+1   1291546     霸王别姬                      霸王别姬  1993.0  ...  中国大陆/中国香港        陈凯歌       2266871  段小楼（张丰毅）与程蝶衣（张国荣）是一对打小一起长大的师兄弟，两人一个演生，一个饰旦，一向配...
+2   1292720     阿甘正传              Forrest Gump  1994.0  ...         美国   罗伯特·泽米吉斯       2435797  阿甘（汤姆·汉克斯 饰）于二战结束后不久出生在美国南方阿拉巴马州一个闭塞的小镇，他先天弱智，...
+3   1295644  这个杀手不太冷                      Léon  1994.0  ...         法国      吕克·贝松       2788701  里昂（让·雷诺饰）是名孤独的职业杀 手，受人雇佣。一天，邻居家小姑娘马蒂尔达（纳塔丽·波特曼饰...
+4   1292063     美丽人生           La vita è bella  1997.0  ...        意大利    罗伯托·贝尼尼       1377399  犹太青年圭多（罗伯托·贝尼尼）邂逅 美丽的女教师多拉（尼可莱塔·布拉斯基），他彬彬有礼的向多拉...
+
+[5 rows x 11 columns]
+
+【2. 缺失值统计】
+                 缺失数量    缺失比例(%)
+movie_id            0   0.000000
+title               0   0.000000
+original_title      0   0.000000
+year             2013   2.998570
+rating_score     3356   4.999106
+rating_count        0   0.000000
+genres           5384   8.020020
+countries           3   0.004469
+directors        8829  13.151701
+collect_count       0   0.000000
+summary         19170  28.555681
+
+【3. 清洗前】总记录数: 67132
+
+【4. 缺失值处理策略】
+✓ rating_score（评分）: 用中位数 0.00 填充 - 原因：数值型连续数据，保留记录
+✓ year（年份）: 用中位数 2006 填充 - 原因：时间数据，中位数代表典型年份
+✓ genres（类型）: 删除缺失行 (5384 行) - 原因：分类变量无法合理填充，删除比例低
+✓ directors（导演）: 用'未知'填充 (8128 行) - 原因：保留记录，便于后续分析
+
+【5. 清洗后】总记录数: 61748
+删除行数: 5384 (占比 8.02%)
+保留行数: 61748 (占比 91.98%)
+
+【6. 数值字段统计信息 (mean/std/min/max)】
+
+movie_id:
+  平均值 (mean): 13128251.88
+  标准差 (std): 11701011.85
+  最小值 (min): 1291544
+  最大值 (max): 34858549
+
+year:
+  平均值 (mean): 1998.55
+  标准差 (std): 19.28
+  最小值 (min): 1931.0
+  最大值 (max): 2021.0
+
+rating_score:
+  平均值 (mean): 2.29
+  标准差 (std): 3.22
+  最小值 (min): 0.0
+  最大值 (max): 9.8
+
+rating_count:
+  平均值 (mean): 4757.16
+  标准差 (std): 42264.08
+  最小值 (min): 0
+  最大值 (max): 1992071
+
+collect_count:
+  平均值 (mean): 7367.85
+  标准差 (std): 69185.26
+  最小值 (min): 0
+  最大值 (max): 4235488
+
+【7. 数据保存】清洗后的数据已保存到: douban_movies_cleaned.csv
+
+============================================================
+数据清洗完成
