@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      imagePullSecrets:
+      - name: swr-secret
+      containers:
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
+          resources:
+            limits:
+              memory: "512Mi"
+          volumeMounts:
+            - name: redis-data
+              mountPath: /data               # ✅ Redis 数据目录
+      volumes:
+        - name: redis-data
+          persistentVolumeClaim:             # 🔧 将 emptyDir 改为 persistentVolumeClaim
+            claimName: redis-data-pvc        # 🔧 引用下面创建的 PVC

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: default
+spec:
+  replicas: 2                       # ← 保持 2，不要修改
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: swr.cn-north-4.myhuaweicloud.com/bronya_land/backend:v1   # ← 替换
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        envFrom:
+        - configMapRef:
+            name: backend-config    # 引用下方 ConfigMap
+        env:
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: redis-secret    # 引用下方 Secret
+              key: password
+        livenessProbe:
+          httpGet:
+            path: /api/ping
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 15

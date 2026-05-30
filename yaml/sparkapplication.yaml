@@ -1,0 +1,32 @@
+apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  name: pyspark-analysis
+  namespace: default
+spec:
+  type: Python
+  pythonVersion: "3"
+  mode: cluster
+  image: swr.cn-southwest-2.myhuaweicloud.com/bronya_land/pyspark:v9
+  mainApplicationFile: local:///opt/spark/work/analysis.py
+  sparkVersion: "3.4.0"
+  restartPolicy:
+    type: Never
+  driver:
+    cores: 1
+    memory: "1g"
+    serviceAccount: spark
+    volumeMounts:
+    - name: analysis-script
+      mountPath: /opt/spark/work
+  executor:
+    cores: 1
+    instances: 2
+    memory: "1g"
+    volumeMounts:
+    - name: analysis-script
+      mountPath: /opt/spark/work
+  volumes:
+  - name: analysis-script
+    configMap:
+      name: spark-analysis-script
